@@ -14,5 +14,5 @@ CHIP DMux {
     OUT a, b;
 
     PARTS:
-    // Put your code here:
+
 }
