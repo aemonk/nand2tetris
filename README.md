@@ -1,14 +1,19 @@
 # nand2tetris
 
-> in progress
+> work in progress
 
-## nand2tetris on coursera
-- [ ] [Part 1](https://www.coursera.org/learn/build-a-computer)
+## Coursera
+- [ ] [Part 1](https://www.coursera.org/learn/build-a-computer) *in Progress*
 - [ ] [Part 2](https://www.coursera.org/learn/nand2tetris2)
 
 ## Part 1
 - [X] Project 00
-- [ ] [Project 01](https://www.nand2tetris.org/project01)
+- [ ] [Project 01](https://www.nand2tetris.org/project01) *in Progress*
+- [ ] [Project 02]()
+- [ ] [Project 03]()
+- [ ] [Project 04]()
+- [ ] [Project 05]()
+- [ ] [Project 06]()
 
 ## Part 2
 
