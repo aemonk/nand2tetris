@@ -7,9 +7,9 @@
 - [ ] [Part 2](https://www.coursera.org/learn/nand2tetris2)
 
 ## Part 1
-- [X] Project 00
-- [ ] [Project 01](https://www.nand2tetris.org/project01) *in Progress*
-- [ ] [Project 02]()
+- [x] Project 00
+- [x] [Project 01](https://www.nand2tetris.org/project01)
+- [ ] [Project 02]() *in Progress*
 - [ ] [Project 03]()
 - [ ] [Project 04]()
 - [ ] [Project 05]()
