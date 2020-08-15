@@ -9,11 +9,11 @@
 ## Part 1
 - [x] Project 00
 - [x] [Project 01](https://www.nand2tetris.org/project01)
-- [ ] [Project 02]() *in Progress*
-- [ ] [Project 03]()
-- [ ] [Project 04]()
-- [ ] [Project 05]()
-- [ ] [Project 06]()
+- [ ] [Project 02](https://www.nand2tetris.org/project02) *in Progress*
+- [ ] [Project 03](https://www.nand2tetris.org/project03)
+- [ ] [Project 04](https://www.nand2tetris.org/project04)
+- [ ] [Project 05](https://www.nand2tetris.org/project05)
+- [ ] [Project 06](https://www.nand2tetris.org/project06)
 
 ## Part 2
 
