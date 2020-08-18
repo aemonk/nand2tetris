@@ -1,8 +1,8 @@
 # project02
 
-- [ ] HalfAdder
-- [ ] FullAdder
-- [ ] Add16
+- [x] HalfAdder
+- [x] FullAdder
+- [x] Add16
 - [ ] Inc16
 - [ ] ALU
 
