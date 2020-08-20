@@ -43,4 +43,18 @@ CHIP ALU {
 
     PARTS:
     //
+
+    // zx
+    Nand(a=zx, b=nx, out=zx0);
+    Nand(a=zx, b=zx0, out=zx00);
+    Nand(a=nx, b=zx0, out=zx000);
+    Nand(a=zx00, b=zx000, out=zx0000);
+    Nand(a=zx0000, b=zx0000, out=zx00000);
+
+    //x0
+    Nand(a=x[0], b=x[0], out=x0);
+    Nand(a=zx00000, b=x[0], out=x00);
+    Nand(a=nx, b=x0, out=x000);
+    Nand(a=x00, b=x000, out=x0000);
+
 }
