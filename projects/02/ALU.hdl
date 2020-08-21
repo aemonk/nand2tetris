@@ -42,19 +42,29 @@ CHIP ALU {
         ng; // 1 if (out < 0),  0 otherwise
 
     PARTS:
-    //
-
     // zx
-    Nand(a=zx, b=nx, out=zx0);
-    Nand(a=zx, b=zx0, out=zx00);
-    Nand(a=nx, b=zx0, out=zx000);
-    Nand(a=zx00, b=zx000, out=zx0000);
-    Nand(a=zx0000, b=zx0000, out=zx00000);
+    Not(in=x[0], out=x0or);
+    Xor(a=x0or, b=x0or, out=x0xor);
+    Mux(a=x[0], b=x0xor, sel=zx, out=x0zx);
+    // nx
+    Not(in=x0zx, out=x0nxor);
+    Mux(a=x0nxor, b=x0zx, sel=nx, out=x0nx);
 
-    //x0
-    Nand(a=x[0], b=x[0], out=x0);
-    Nand(a=zx00000, b=x[0], out=x00);
-    Nand(a=nx, b=x0, out=x000);
-    Nand(a=x00, b=x000, out=x0000);
+    // zy
+    Not(in=y[0], out=y0or);
+    Xor(a=y0or, b=y0or, out=y0xor);
+    Mux(a=y[0], b=y0xor, sel=zx, out=y0zy);
+    // ny
+    Not(in=y0zy, out=y0nxor);
+    Mux(a=y0nxor, b=y0zy, sel=nx, out=y0ny);
+
+    // f (TODO: dont forget the carry)
+    And(a=x0nx, b=y0ny, out=xy0and);
+    FullAdder(a=x0nx, b=y0ny, c=false, sum=xy0sum, carry=xy0carry);
+    Mux(a=xy0and, b=xy0sum, sel=f, out=xy0fout);
+
+    // no
+    Not(in=xy0fout, out=xy0foutnot);
+    Mux(a=xy0fout, b=xy0foutnot, sel=no, out=out[0]);
 
 }
