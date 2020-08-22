@@ -43,28 +43,30 @@ CHIP ALU {
 
     PARTS:
     // zx
-    Not(in=x[0], out=x0or);
-    Xor(a=x0or, b=x0or, out=x0xor);
-    Mux(a=x[0], b=x0xor, sel=zx, out=x0zx);
-    // nx
-    Not(in=x0zx, out=x0nxor);
-    Mux(a=x0nxor, b=x0zx, sel=nx, out=x0nx);
-
+    Mux16(a=x, b=false, sel=zx, out=outx);
     // zy
-    Not(in=y[0], out=y0or);
-    Xor(a=y0or, b=y0or, out=y0xor);
-    Mux(a=y[0], b=y0xor, sel=zx, out=y0zy);
-    // ny
-    Not(in=y0zy, out=y0nxor);
-    Mux(a=y0nxor, b=y0zy, sel=nx, out=y0ny);
+    Mux16(a=y, b=false, sel=zy, out=outy);
 
-    // f (TODO: dont forget the carry)
-    And(a=x0nx, b=y0ny, out=xy0and);
-    FullAdder(a=x0nx, b=y0ny, c=false, sum=xy0sum, carry=xy0carry);
-    Mux(a=xy0and, b=xy0sum, sel=f, out=xy0fout);
+    // nx
+    Not16(in=outx, out=notoutx);
+    Mux16(a=outx, b=notoutx, sel=nx, out=m1);
+    // ny
+    Not16(in=outy, out=notouty);
+    Mux16(a=outy, b=notouty, sel=ny, out=m2);
+
+    // f
+    Add16(a=m1, b=m2, out=m1Addm2);
+    And16(a=m1, b=m2, out=m1Andm2);
+    Mux16(a=m1Andm2, b=m1Addm2, sel=f, out=outf);
 
     // no
-    Not(in=xy0fout, out=xy0foutnot);
-    Mux(a=xy0fout, b=xy0foutnot, sel=no, out=out[0]);
+    Not16(in=outf, out=notoutf);
+    Mux16(a=outf, b=notoutf, sel=no, out=out, out[15]=ng, out[0..15]=outzr);
+
+    // zr
+    Not16(in=outzr, out[0..7]=low8, out[8..15]=high8);
+    Or8Way(in=low8, out=zr1);
+    Or8Way(in=high8, out=zr2);
+    Or(a=zr1, b=zr2, out=zr);
 
 }
