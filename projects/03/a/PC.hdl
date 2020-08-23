@@ -5,10 +5,10 @@
 
 /**
  * A 16-bit counter with load and reset control bits.
- * if      (reset[t] == 1) out[t+1] = 0
- * else if (load[t] == 1)  out[t+1] = in[t]
- * else if (inc[t] == 1)   out[t+1] = out[t] + 1  (integer addition)
- * else                    out[t+1] = out[t]
+ * if      (reset[t] == 1) out[t+1] = 0               // resetting: counter = 0
+ * else if (load[t] == 1)  out[t+1] = in[t]           // setting counter = base value
+ * else if (inc[t] == 1)   out[t+1] = out[t] + 1  (integer addition) // incrementing: counter++
+ * else                    out[t+1] = out[t]          // counter does not change
  */
 
 CHIP PC {
@@ -17,9 +17,21 @@ CHIP PC {
 
     PARTS:
     // register, incrementer and logic gates
+    //  if      (reset[t] == 1) out[t+1] = 0                resetting: counter = 0
+    Mux16(a=in, b=false, sel=reset, out=inzero);
+    Mux16(a=in, b=inzero, sel=reset, out=outzero);
 
-    Register(in=, load=, out=);
-    Inc16(in=in, out=incout);
-    Mux(); //??
+    //   else if (load[t] == 1)  out[t+1] = in[t]            setting counter = base value
+    Register(in=outzero, load=load, out=inset);
+    Mux16(a=outzero, b=inset, sel=load, out=setout);
+
+    //   else if (inc[t] == 1)   out[t+1] = out[t] + 1  (integer addition)  incrementing: counter++
+    Inc16(in=setout, out=ininc);
+    Mux16(a=setout, b=ininc, sel=inc, out=incout);
+
+    //   else                    out[t+1] = out[t]           counter does not change
+    //Mux16(a=, b=, out=out);
+    Register(in=incout, load=load, out=out);
+
 
 }
