@@ -16,5 +16,10 @@ CHIP PC {
     OUT out[16];
 
     PARTS:
-    // Put your code here:
+    // register, incrementer and logic gates
+
+    Register(in=, load=, out=);
+    Inc16(in=in, out=incout);
+    Mux(); //??
+
 }

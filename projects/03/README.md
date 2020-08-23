@@ -3,12 +3,12 @@
 ## a
 - [x] Bit
 - [x] Register
-- [ ] RAM8
-- [ ] RAM64
+- [x] RAM8
+- [x] RAM64
 - [ ] PC
 
 ## b
-- [ ] RAM512
-- [ ] RAM4K
-- [ ] RAM16K
+- [x] RAM512
+- [x] RAM4K
+- [x] RAM16K
 
