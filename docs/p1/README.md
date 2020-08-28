@@ -1,0 +1,15 @@
+# week 1
+
+![](1File.png) 
+![](2File.png)
+![](3File.png)
+![](4File.png)
+![](5File.png)
+![](6File.png)
+![](7File.png)
+![](8File.png)
+![](9File.png)
+![](10File.png)
+![](11File.png) 
+![](12File.png)
+![](13File.png)
