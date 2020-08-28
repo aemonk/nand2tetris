@@ -19,7 +19,13 @@
 
 
 ## Part 2
-- [ ] [Project X]()
+- [ ] [Project 07]()
+- [ ] [Project 08]()
+- [ ] [Project 09]()
+- [ ] [Project 10]()
+- [ ] [Project 11]()
+- [ ] [Project 12]()
+- [ ] [Project 13]()
 
 
 
