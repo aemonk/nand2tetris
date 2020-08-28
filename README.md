@@ -6,16 +6,21 @@
 - [ ] [Part 1](https://www.coursera.org/learn/build-a-computer) *in Progress*
 - [ ] [Part 2](https://www.coursera.org/learn/nand2tetris2)
 
+
 ## Part 1
 - [x] Project 00
 - [x] [Project 01](https://www.nand2tetris.org/project01)
 - [x] [Project 02](https://www.nand2tetris.org/project02)
-- [ ] [Project 03](https://www.nand2tetris.org/project03) *in progress*
-- [ ] [Project 04](https://www.nand2tetris.org/project04)
+- [x] [Project 03](https://www.nand2tetris.org/project03)
+- [ ] [Project 04](https://www.nand2tetris.org/project04) *in Progress*
 - [ ] [Project 05](https://www.nand2tetris.org/project05)
 - [ ] [Project 06](https://www.nand2tetris.org/project06)
 
+
+
 ## Part 2
+- [ ] [Project X]()
+
 
 
 ## Resources
