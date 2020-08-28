@@ -91,3 +91,34 @@ Keyboard memory map
 ![](49File.png)
 ![](50File.png)
 ![](51File.png)
+
+## Hack Programming, Part 1
+
+- working with registers and memory
+
+![](52File.png)
+![](53File.png)
+![](54File.png)
+![](55File.png)
+![](56File.png)
+![](57File.png)
+![](58File.png)
+![](59File.png)
+
+![](61File.png)
+![](61File.png)
+![](62File.png)
+![](63File.png)
+![](64File.png)
+![](65File.png)
+![](66File.png)
+![](67File.png)
+
+## Hack Programming, Part 2
+
+- branching, variables, iteration
+
+## Hack Programming, Part 3
+
+- pointers, input/output
+
