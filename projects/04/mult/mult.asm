@@ -9,10 +9,40 @@
 
 // Put your code here.
 
-// R0 load
-// test R0>=0
-// R1 load
-// test R1>=0
-// multiplication store to R2
-// test R2<32768
-// end
+	@R0
+	D=M
+	@n
+	M=D // n=R0
+
+	@i
+	M=1 // i = 0
+	@sum
+	M=0 // sum = 0
+
+(LOOP)
+	@i
+	D=M
+	@n
+	D=D-M
+	@STOP
+	D;JGT // if i > n goto STOP
+	
+	@sum
+	D=M
+	@R1
+	D=D+M
+	@sum
+	M=D// sum=sum + R1
+	@i
+	M=M+1
+	@LOOP
+	0;JMP
+
+(STOP)
+	@sum
+	D=M
+	@R2
+	M=D
+(END)
+	@END
+	0;JMP

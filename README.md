@@ -14,8 +14,8 @@
 - [x] [Project 01](https://www.nand2tetris.org/project01)
 - [x] [Project 02](https://www.nand2tetris.org/project02)
 - [x] [Project 03](https://www.nand2tetris.org/project03)
-- [ ] [Project 04](https://www.nand2tetris.org/project04) *in Progress*
-- [ ] [Project 05](https://www.nand2tetris.org/project05)
+- [x] [Project 04](https://www.nand2tetris.org/project04)
+- [ ] [Project 05](https://www.nand2tetris.org/project05) *in progress*
 - [ ] [Project 06](https://www.nand2tetris.org/project06)
 
 

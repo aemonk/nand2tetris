@@ -13,45 +13,71 @@
 
 // Put your code here.
 
-	
+(LOOP)
 	@SCREEN
 	D=A
+
 	@addr
 	M=D // addr = 16384 screen memory map
 
 	@8192 // height
 	D=A
+
 	@n
 	M=D // n = RAM[0]
 
 	@i
-	M=0 // i = 
+	M=0 // i = 0
 
-	// RAM[24576 KBD address
-	// if KBD > 0 then 1
-	// else 0
+	@KBD
+	D=M
 
-(LOOP)
+	@WHITE
+	D; JEQ // if KBD == 0 goto WHITE
+	
+	@BLACK
+	D; JGT // if KBD > 0 goto BLACK
+
+(WHITE)
 	@i
 	D=M
 	@n
 	D=D-M
-	@END
-	D;JGT // if i > n goto END
+	@LOOP
+	D; JEQ // if i > n goto LOOP
 	
 	@addr
 	A=M
-	M=-1 // RAM[addr] = 1111...
+	M=0 // white 0
 
 	@i 
 	M=M+1 // i = i + 1
-	@1 // 
-	D=A
-	@addr
-	M=D+M // addr = addr + 1
-	@LOOP
-	0;JMP // goto LOOP
 
-(END)
-	@END // programs end
-	0;JMP // infinite loop
+	@addr
+	M=M+1
+
+	@WHITE
+	0; JMP 
+
+(BLACK)
+	@i
+	D=M
+
+	@n
+	D=D-M
+
+	@LOOP
+	D; JEQ // if i > n goto LOOP
+	
+	@addr
+	A=M
+	M=-1 // black 1
+
+	@i 
+	M=M+1 // i = i + 1
+
+	@addr
+	M=M+1
+
+	@BLACK
+	0; JMP
